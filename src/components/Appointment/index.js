@@ -6,14 +6,14 @@ import Empty from "./Empty";
 
 
 export default function Appointment(props) {
-  let message = ""
-  const {time} = props
+  // let message = ""
+  // const {time} = props
 
-  if (time) {
-    message = `Appointment at ${time}.`
-  } else {
-    message = "No Appointments."
-  }
+  // if (time) {
+  //   message = `Appointment at ${time}.`
+  // } else {
+  //   message = "No Appointments."
+  // }
 
   return (
     <article className="appointment" >
