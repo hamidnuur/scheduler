@@ -96,6 +96,46 @@ export default function Application(props) {
     })
   },[]);
 
+    //function to book an interview
+    function bookInterview(id, interview) {
+      // console.log(id, interview);
+      const appointment = {
+        ...state.appointments[id],
+        interview: { ...interview }
+      };
+  
+      const appointments = {
+        ...state.appointments,
+        [id]: appointment
+      };
+  
+      // let req = {
+      //   url,
+      //   method: 'PUT',
+      //   data: content
+      // }
+      // axios(req).then(response => {
+      //   resolve(response.data.content)
+      // }, response => {
+      //   this.handleEditError(response)
+      // })
+  
+      const url =`http://localhost:8001/api/appointments/${id}`;
+  
+      let req={
+        url,
+        method: 'PUT',
+        data: appointment
+      }
+      return axios(req).then(response => {
+        console.log("response from axios put=====>", response.data);
+        setState({...state, appointments})
+      })
+  
+  
+  
+    }
+
   //get the daily appointemnts from the the helper function
   //  const dailyAppointments = getAppointmentsForDay(state, state.day);
   //  console.log("daily appointments:", dailyAppointments);
@@ -111,6 +151,8 @@ export default function Application(props) {
       time={appointment.time}
       interview={interview}
       interviewers={interviewers}
+      bookInterview={bookInterview}
+      
     />
   );
 });
