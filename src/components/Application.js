@@ -109,19 +109,11 @@ export default function Application(props) {
         [id]: appointment
       };
   
-      // let req = {
-      //   url,
-      //   method: 'PUT',
-      //   data: content
-      // }
-      // axios(req).then(response => {
-      //   resolve(response.data.content)
-      // }, response => {
-      //   this.handleEditError(response)
-      // })
+
   
       const url =`http://localhost:8001/api/appointments/${id}`;
   
+      //to save the data to the end API
       let req={
         url,
         method: 'PUT',
@@ -134,6 +126,30 @@ export default function Application(props) {
   
   
   
+    }
+
+      //function to cancel the interview
+    function cancelInterview(id){
+      const appointment = {
+        ...state.appointments[id],
+        interview: null
+      };
+      const appointments = {
+        ...state.appointments,
+        [id]: appointment
+      };
+
+      const url =`http://localhost:8001/api/appointments/${id}`;
+
+      let req={
+        url,
+        method: 'DELETE',
+        data:appointment
+      }
+      return axios(req).then(response =>{
+        console.log("response from delete axios===>",response);
+        setState({...state, appointments});
+      })
     }
 
   //get the daily appointemnts from the the helper function
@@ -152,7 +168,8 @@ export default function Application(props) {
       interview={interview}
       interviewers={interviewers}
       bookInterview={bookInterview}
-      
+      cancelInterview={cancelInterview}
+
     />
   );
 });
