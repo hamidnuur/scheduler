@@ -120,7 +120,6 @@ export default function Application(props) {
         data: appointment
       }
       return axios(req).then(response => {
-        console.log("response from axios put=====>", response.data);
         setState({...state, appointments})
       })
   
