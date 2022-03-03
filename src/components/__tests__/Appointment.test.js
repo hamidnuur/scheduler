@@ -11,7 +11,4 @@ describe("Appointment", () => {
     render(<Appointment />);
   });
 
-  // it("renders from without crashing", () => {
-  //   render(<Form interviewers ={[]}/>);
-  // });
 }); 
