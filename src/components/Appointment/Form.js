@@ -22,7 +22,7 @@ export default function Form(props) {
       setError("Student name cannot be blank");
       return;
     }
-    
+
     setError("");
     props.onSave(name, interviewer);
   }
@@ -34,7 +34,7 @@ export default function Form(props) {
       <form autoComplete="off" onSubmit={event => event.preventDefault()}>
           <input
           className="appointment__create-input text--semi-bold"
-          name="name"
+          name={props.name}
           type="text"
           placeholder="Enter Student Name"
           value={name}
