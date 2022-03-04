@@ -14,16 +14,13 @@ export default function useVisualMode(initial){
 
       }else{
         setHistory(prev => [...prev, nextMode]);
-        // setMode(nextMode);
-        // setMode(mode = nextMode);
-
       }
       setMode(nextMode);
   }
 
   //back function
   function back() {
-    // setHistory(history.pop());
+    
     if(history.length > 1) {
 
 

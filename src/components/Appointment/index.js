@@ -34,7 +34,6 @@ export default function Appointment(props) {
     };
     transition(SAVING);
 
-    //in Application.js, we used return axios which will return a promise, so we need to use .then() here,  .then uses an anonymous callback function
     props.bookInterview(props.id,interview)
     .then(()=>{transition(SHOW)})
     .catch(() => transition(ERROR_SAVE,true));
@@ -46,7 +45,6 @@ export default function Appointment(props) {
     props.cancelInterview(props.id)
     .then(() => transition(EMPTY))
     .catch(() => {
-      console.log("inside the catch block........");
       transition(ERROR_DELETE,true)
 
      });
@@ -57,7 +55,6 @@ export default function Appointment(props) {
   return (
     <article className="appointment" >
       <Header time={props.time}/>
-      {/* {props.interview ? <Show student={props.interview.student} interviewer={props.interview.interviewer.name}/>: <Empty />} */}
 
       {mode === EMPTY && <Empty onAdd={() => transition(CREATE)} />}
       {mode === SHOW && (
@@ -88,7 +85,6 @@ export default function Appointment(props) {
       )}
       {mode === EDIT && (
         <Form
-        // name={props.interview.student}
         interviewer={props.interviewer}
         interviewers={props.interviewers}
         onSave={save}
@@ -115,7 +111,7 @@ export default function Appointment(props) {
           onClose={back}
         />
       )}
-      
+
     </article>
   )
 };
