@@ -43,14 +43,14 @@ _By selecting a weekday , a user can see booked appointments and available slots
 
 ### Book an Appointment
 !['book-an-appointment'](https://github.com/hamidnuur/scheduler/blob/master/docs/Book%20An%20Interview.png?raw=true)
-_A user can choose any empty slot to book an appointment
+_A user can choose any empty slot to book an appointment_
 
 ### No slot available for a specific day
 !['book-an-appointment'](https://github.com/hamidnuur/scheduler/blob/master/docs/No%20Slots%20Available.png?raw=true)
 
 ### Deleting an appointment
 !['book-an-appointment'](https://github.com/hamidnuur/scheduler/blob/master/docs/Delete%20An%20Interview.png?raw=true)
-_When a user wants to delete an appointment, there will be a confirmation popup
+_When a user wants to delete an appointment, there will be a confirmation popup_
 
 
 ## API server/*Database Setup
