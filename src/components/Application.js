@@ -9,13 +9,8 @@ import {getAppointmentsForDay, getInterview, getInterviewersForDay} from "../hel
 import useApplicationData from "hooks/useApplicationData";
 
 
-
-
-
 export default function Application(props) {
   const { state, setDay, bookInterview, cancelInterview } = useApplicationData();
-
-  let dailyAppointments = getAppointmentsForDay(state, state.day);
 
   let appointments = getAppointmentsForDay(state, state.day);
 
@@ -35,7 +30,6 @@ export default function Application(props) {
     />
   );
 });
-
 
   return (
     <main className="layout">
